@@ -12,9 +12,6 @@
     "url": "git+https://github.com/bryanbuchanan/unoflat.git"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bryanbuchanan/unoflat/issues"
-  },
   "dependencies": {
     "postcss": "^8.4.38",
     "postcss-js": "^4.0.1",

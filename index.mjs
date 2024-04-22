@@ -4,16 +4,21 @@ import path from 'path'
 
 import functions from './functions/index.mjs'
 
-// File destinations
-const input = "./src/theme.scss"
-const output = "./dist/theme.json"
-const devOutput = path.join(os.homedir(), '.config', 'zed', 'themes', 'theme.json')
-let outputs = [output]
+// Get input file
+const inputDir = "./src"
+const inputFile = await functions.getScssFile(inputDir)
 
-const processFile = async outputs => {
+// Define output files
+const fileName = path.basename(inputFile, '.scss')
+const outputFiles = [
+	`./dist/${fileName}.json`,
+	path.join(os.homedir(), '.config', 'zed', 'themes', `${fileName}.json`),
+]
+
+const processFile = async () => {
 
 	// Convert SCSS to CSS
-	const css = await functions.compileSCSS(input)
+	const css = await functions.compileSCSS(inputFile)
 
 	// Convert CSS to JS Object
 	let js = await functions.cssToObject(css)
@@ -27,26 +32,20 @@ const processFile = async outputs => {
 	let json = JSON.stringify(js, null, 2)
 
 	// Save output
-	for (const output of outputs) {
-		functions.save(json, output)
+	for (const outputFile of outputFiles) {
+		functions.save(json, outputFile)
 	}
 
 }
 
 if (process.env.MODE === "dev") {
 
-	// Add local config to outputs list
-	outputs.push(devOutput)
-
 	// Watch source file for changes
-	fs.watch(path.dirname(input), (_) => {
-		processFile(outputs)
-		console.log('---')
-	})
+	fs.watch(inputDir, (_) => processFile())
 
-	console.log(`Watching '${input}' for changes...`)
+	console.log(`Watching '${inputDir}' for changes...`)
 	console.log(`Press ^c to stop`)
 
 }
 
-processFile(outputs)
+processFile()
