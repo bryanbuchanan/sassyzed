@@ -1,0 +1,24 @@
+{
+  "name": "sassyzed",
+  "version": "0.0.1",
+  "author": "Bryan Buchanan <bryan.b@hey.com>",
+  "description": "Zed theme compiler that uses SCSS as input",
+  "scripts": {
+    "dev": "MODE=dev node index.mjs",
+    "build": "node index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryanbuchanan/unoflat.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryanbuchanan/unoflat/issues"
+  },
+  "dependencies": {
+    "postcss": "^8.4.38",
+    "postcss-js": "^4.0.1",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.75.0"
+  }
+}

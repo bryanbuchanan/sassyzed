@@ -1,0 +1,228 @@
+:root {
+	--schema: "https://zed.dev/schema/themes/v0.1.0.json";
+	--name: "Uno Flat";
+	--author: "Bryan Buchanan <bryan.b@hey.com>";
+}
+
+themes {
+
+	dark { 
+		--name: "Uno Flat Dark";
+		--appearance: "dark";
+		
+		$foreground-accent: #f3cf3f;
+		$foreground-higher: #efefef;
+		$foreground-high: #dfdfdf;
+		$foreground: #abb2bf;
+		$foreground-low: #7a808b;
+		$foreground-lower: #495162;
+		$foreground-transparent: #4e566699;
+		
+		$background-lowest: #495162;
+		$background-lower: #3a414e;
+		$background-low: #2c313c;
+		$background: #282c33;
+		$background-high: #20242a;
+		$background-higher: #20242a;
+		
+		// UI
+		$predictive: #4D5970;
+		$modified: #e5c07b;
+		$ignored: #636b78;
+		$hint: #abb2bf;
+		$error: #e56973;
+		$deleted: #e06c75;
+		$created: #a5e075;
+		$warning: #d19a66;
+		
+		// Terminal
+		$black: #3f4451;
+		$red: #dc6d75;
+		$green: #98c379;
+		$yellow: #d9c770;
+		$blue: #4aa5f0;
+		$magenta: #c162de;
+		$cyan: #42b3c2;
+		$white: #efefef;
+		
+		// Syntax highlighting
+		$syntax1: #a9d48a;
+		$syntax2: #f6707b;
+		$syntax3: #df9d5e;
+		$syntax4: #abb2bf;
+		$syntax5: #cc7de7;
+		$syntax6: #79bcf3;
+		$syntax7: #e4c17b;
+		$syntax8: #40b8c8;
+	
+		style {
+
+			/* Editor */
+			--editor-foreground: #{$foreground};
+			--editor-background: #{$background};
+			--editor-gutter-background: #{$background};
+			--editor-active--line-background: #{$background-low};
+			--editor-line--number: #{$foreground-lower};
+			--editor-active--line--number: #{$foreground};
+			--editor-invisible: #{$foreground-lower};
+			--editor-wrap--guide: #{$foreground-lower};
+			--editor-active--wrap--guide: #{$foreground-lower};
+
+			/* Borders */
+			--border: #{$background-high};
+			--border-variant: #{$background-high};
+			--border-focused: #{$background-high};
+			--border-selected: #{$background-high};
+			--border-transparent: #{$background-high};
+			--border-disabled: #{$background-high};
+			
+			/* Text */
+			--text: #{$foreground-high};
+			--text-muted: #{$foreground};
+			--text-placeholder: #{$foreground-lower};
+			--text-disabled: #{$foreground-lower};
+			--text-accent: #{$foreground-accent};
+			
+			/* Layout */
+			--surface-background: #{$background-low};
+			--elevated--surface-background: #{$background-high};
+			--panel-background: #{$background};
+			--panel-focused--border: null;
+			--background: #{$background};
+			--status--bar-background: #{$background};
+			--title--bar-background: #{$background};
+			--toolbar-background: #{$background};
+
+			/* Tabs */
+			--tab--bar-background: #{$background-high};
+			--tab-inactive--background: #{$background-high};
+			--tab-active--background: #{$background};
+			
+			/* Buttons */
+			--element-background: #{$background-lower};
+			--element-hover: #{$background-lowest};
+			--element-active: #{$background-lowest};
+			--element-selected: #{$background-lowest};
+			--element-disabled: #{$background-lowest};
+			
+			--predictive: #{$predictive};
+			--modified: #{$modified};
+			--ignored: #{$ignored};
+			--hint: #{$hint};
+			--error: #{$error};
+			--deleted: #{$deleted};
+			--created: #{$created};
+			--warning: #{$warning};
+
+			/* Scrollbar */
+			--scrollbar-thumb-background: #{$foreground-transparent}; 
+			// --scrollbar-thumb-hover--background: #abb2bf;
+			--scrollbar-thumb-border: transparent;
+			--scrollbar-track-background: transparent;
+
+			/* Terminal */
+			--terminal-background: #{$background};
+			--terminal-ansi-black: #{$black};
+			--terminal-ansi-red: #{$red};
+			--terminal-ansi-green: #{$green};
+			--terminal-ansi-yellow: #{$yellow};
+			--terminal-ansi-blue: #{$blue};
+			--terminal-ansi-magenta: #{$magenta};
+			--terminal-ansi-cyan: #{$cyan};
+			--terminal-ansi-white: #{$white};
+
+			/* Players */
+			players {
+				p1 {
+					--cursor: #{$white};
+					--background: #{$white};
+					--selection: #{$white}22;
+				}
+				p2 {
+					--cursor: #{$blue};
+					--background: #{$blue};
+					--selection: #{$blue}44;
+				}
+				p3 {
+					--cursor: #{$magenta};
+					--background: #{$magenta};
+					--selection: #{$magenta}44;
+				}
+				p4 {
+					--cursor: #{$green};
+					--background: #{$green};
+					--selection: #{$green}44;
+				}
+				p5 {
+					--cursor: #{$red};
+					--background: #{$red};
+					--selection: #{$red}44;
+				}
+			}
+
+			/* Syntax highlighting */
+			syntax {
+				attribute { color: #{$syntax3}; }
+				boolean { color: #{$syntax3}; }
+				comment {
+					color: #{$foreground-low};
+					font-style: italic;
+				}
+				comment.doc { color: #{$syntax4}; }
+				constant { color: #{$syntax3}; }
+				constructor { color: #{$syntax2}; }
+				embedded { color: #{$syntax4}; }
+				emphasis {
+					color: #{$syntax5};
+					font-style: italic;
+					&.strong {
+						color: #{$syntax7};
+						font-weight: 700;
+					}
+				}
+				enum { color: #{$syntax8}; }
+				function { color: #{$syntax6}; }
+				hint { color: #{$syntax4}; }
+				keyword { color: #{$syntax5}; }
+				label { color: #{$syntax6}; }
+				link_text { color: #{$syntax6}; }
+				link_uri { color: #{$syntax5}; }
+				number { color: #{$syntax7}; }
+				operator { color: #{$syntax8}; }
+				predictive { color: #{$syntax4}; }
+				preproc { color: #{$syntax1}; }
+				primary { color: #{$syntax5}; }
+				property { color: #{$syntax2}; }
+				punctuation { color: #{$syntax7}; }
+				punctuation.bracket { color: #{$syntax3}; }
+				punctuation.delimiter { color: #{$syntax7}; }
+				punctuation.list_marker {
+					color: #{$syntax7};
+					font-weight: 700;
+				}
+				punctuation.special { color: #{$syntax2}; }
+				string {
+					color: #{$syntax1};
+					&.escape { color: #{$syntax1}; }
+					&.regex { color: #{$syntax1}; }
+					&.special { color: #{$syntax8}; }
+					&.special.symbol { color: #{$syntax8}; }
+				}
+				tag { color: #{$syntax5}; }
+				text.literal { color: #{$syntax1}; }
+				title {
+					color: #{$syntax7};
+					font-weight: 700;
+				}
+				type { color: #{$syntax7}; }
+				variable { color: #{$syntax2}; }
+				variable.special { color: #{$syntax7}; }
+				variant { color: #{$syntax6}; }
+
+			}
+
+		}
+
+	}
+
+}
