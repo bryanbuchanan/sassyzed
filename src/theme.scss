@@ -61,12 +61,12 @@ themes {
 			--editor-foreground: #{$foreground};
 			--editor-background: #{$background};
 			--editor-gutter-background: #{$background};
-			--editor-active--line-background: #{$background-low};
-			--editor-line--number: #{$foreground-lower};
-			--editor-active--line--number: #{$foreground};
+			--editor-active_line-background: #{$background-low};
+			--editor-line_number: #{$foreground-lower};
+			--editor-active_line_number: #{$foreground};
 			--editor-invisible: #{$foreground-lower};
-			--editor-wrap--guide: #{$foreground-lower};
-			--editor-active--wrap--guide: #{$foreground-lower};
+			--editor-wrap_guide: #{$foreground-lower};
+			--editor-active_wrap_guide: #{$foreground-lower};
 
 			/* Borders */
 			--border: #{$background-high};
@@ -85,18 +85,18 @@ themes {
 
 			/* Layout */
 			--surface-background: #{$background-low};
-			--elevated--surface-background: #{$background-high};
+			--elevated_surface-background: #{$background-high};
 			--panel-background: #{$background};
-			--panel-focused--border: null;
+			--panel-focused_border: null;
 			--background: #{$background};
-			--status--bar-background: #{$background};
-			--title--bar-background: #{$background};
+			--status_bar-background: #{$background};
+			--title_bar-background: #{$background};
 			--toolbar-background: #{$background};
 
 			/* Tabs */
-			--tab--bar-background: #{$background-high};
-			--tab-inactive--background: #{$background-high};
-			--tab-active--background: #{$background};
+			--tab_bar-background: #{$background-high};
+			--tab-inactive_background: #{$background-high};
+			--tab-active_background: #{$background};
 
 			/* Buttons */
 			--element-background: #{$background-lower};
