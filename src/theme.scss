@@ -6,10 +6,10 @@
 
 themes {
 
-	dark { 
+	dark {
 		--name: "Uno Flat Dark";
 		--appearance: "dark";
-		
+
 		$foreground-accent: #f3cf3f;
 		$foreground-higher: #efefef;
 		$foreground-high: #dfdfdf;
@@ -17,14 +17,14 @@ themes {
 		$foreground-low: #7a808b;
 		$foreground-lower: #495162;
 		$foreground-transparent: #4e566699;
-		
+
 		$background-lowest: #495162;
 		$background-lower: #3a414e;
 		$background-low: #2c313c;
 		$background: #282c33;
 		$background-high: #20242a;
 		$background-higher: #20242a;
-		
+
 		// UI
 		$predictive: #4D5970;
 		$modified: #e5c07b;
@@ -34,7 +34,7 @@ themes {
 		$deleted: #e06c75;
 		$created: #a5e075;
 		$warning: #d19a66;
-		
+
 		// Terminal
 		$black: #3f4451;
 		$red: #dc6d75;
@@ -44,7 +44,7 @@ themes {
 		$magenta: #c162de;
 		$cyan: #42b3c2;
 		$white: #efefef;
-		
+
 		// Syntax highlighting
 		$syntax1: #a9d48a;
 		$syntax2: #f6707b;
@@ -54,7 +54,7 @@ themes {
 		$syntax6: #79bcf3;
 		$syntax7: #e4c17b;
 		$syntax8: #40b8c8;
-	
+
 		style {
 
 			/* Editor */
@@ -75,14 +75,14 @@ themes {
 			--border-selected: #{$background-high};
 			--border-transparent: #{$background-high};
 			--border-disabled: #{$background-high};
-			
+
 			/* Text */
 			--text: #{$foreground-high};
 			--text-muted: #{$foreground};
 			--text-placeholder: #{$foreground-lower};
 			--text-disabled: #{$foreground-lower};
 			--text-accent: #{$foreground-accent};
-			
+
 			/* Layout */
 			--surface-background: #{$background-low};
 			--elevated--surface-background: #{$background-high};
@@ -97,14 +97,14 @@ themes {
 			--tab--bar-background: #{$background-high};
 			--tab-inactive--background: #{$background-high};
 			--tab-active--background: #{$background};
-			
+
 			/* Buttons */
 			--element-background: #{$background-lower};
 			--element-hover: #{$background-lowest};
 			--element-active: #{$background-lowest};
 			--element-selected: #{$background-lowest};
 			--element-disabled: #{$background-lowest};
-			
+
 			--predictive: #{$predictive};
 			--modified: #{$modified};
 			--ignored: #{$ignored};
@@ -115,7 +115,7 @@ themes {
 			--warning: #{$warning};
 
 			/* Scrollbar */
-			--scrollbar-thumb-background: #{$foreground-transparent}; 
+			--scrollbar-thumb-background: #{$foreground-transparent};
 			// --scrollbar-thumb-hover--background: #abb2bf;
 			--scrollbar-thumb-border: transparent;
 			--scrollbar-track-background: transparent;
