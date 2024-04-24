@@ -27,4 +27,6 @@ It's a quick-and-dirty utility that compiles a SCSS file into a Zed JSON theme f
 
 ## Quirks
 
+- CSS var prefixes (`--`) are stripped from the JSON output.
+- Dashes (`-`) are replaced with periods (`.`) in the JSON output.
 - Because this utility uses CSS vars to define values, SCSS variables need to be wrapped in `#{}` tags to be evaluated correctly.

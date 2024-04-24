@@ -7,30 +7,38 @@
 themes {
 
 	dark {
-		--name: "Uno Flat Dark";
+		--name: "Uno Flat Dark (Dev)";
 		--appearance: "dark";
 
 		$foreground-accent: #f3cf3f;
-		$foreground-higher: #efefef;
-		$foreground-high: #dfdfdf;
+		$foreground-higher-contrast: #efefef;
+		$foreground-high-contrast: #dfdfdf;
 		$foreground: #abb2bf;
-		$foreground-low: #7a808b;
-		$foreground-lower: #495162;
+		$foreground-low-contrast: #7a808b;
+		$foreground-lower-contrast: #495162;
 		$foreground-transparent: #4e566699;
 
-		$background-lowest: #495162;
-		$background-lower: #3a414e;
-		$background-low: #2c313c;
+		$background-lowest-contrast: #495162;
+		$background-lower-contrast: #3a414e;
+		$background-low-contrast: #2c313c;
 		$background: #282c33;
-		$background-high: #20242a;
-		$background-higher: #20242a;
+		$background-high-contrast: #20242a;
+		$background-higher-contrast: #20242a;
 
 		// UI
 		$predictive: #4D5970;
 		$modified: #e5c07b;
 		$ignored: #636b78;
+
+		$info: #4aa5f0;
+
 		$hint: #abb2bf;
-		$error: #e56973;
+		$hint-background: mix($background-low-contrast, $info, 80%);
+
+		$error: #e06c75;
+		$error-background: mix($background-low-contrast, $error, 80%);
+		$error-border: $error;
+		
 		$deleted: #e06c75;
 		$created: #a5e075;
 		$warning: #d19a66;
@@ -61,31 +69,31 @@ themes {
 			--editor-foreground: #{$foreground};
 			--editor-background: #{$background};
 			--editor-gutter-background: #{$background};
-			--editor-active_line-background: #{$background-low};
-			--editor-line_number: #{$foreground-lower};
+			--editor-active_line-background: #{$background-low-contrast};
+			--editor-line_number: #{$foreground-lower-contrast};
 			--editor-active_line_number: #{$foreground};
-			--editor-invisible: #{$foreground-lower};
-			--editor-wrap_guide: #{$foreground-lower};
-			--editor-active_wrap_guide: #{$foreground-lower};
+			--editor-invisible: #{$foreground-lower-contrast};
+			--editor-wrap_guide: #{$foreground-lower-contrast};
+			--editor-active_wrap_guide: #{$foreground-lower-contrast};
 
 			/* Borders */
-			--border: #{$background-high};
-			--border-variant: #{$background-high};
-			--border-focused: #{$background-high};
-			--border-selected: #{$background-high};
-			--border-transparent: #{$background-high};
-			--border-disabled: #{$background-high};
+			--border: #{$background-high-contrast};
+			--border-variant: #{$background-high-contrast};
+			--border-focused: #{$background-high-contrast};
+			--border-selected: #{$background-high-contrast};
+			--border-transparent: #{$background-high-contrast};
+			--border-disabled: #{$background-high-contrast};
 
 			/* Text */
-			--text: #{$foreground-high};
+			--text: #{$foreground-high-contrast};
 			--text-muted: #{$foreground};
-			--text-placeholder: #{$foreground-lower};
-			--text-disabled: #{$foreground-lower};
+			--text-placeholder: #{$foreground-lower-contrast};
+			--text-disabled: #{$foreground-lower-contrast};
 			--text-accent: #{$foreground-accent};
 
 			/* Layout */
-			--surface-background: #{$background-low};
-			--elevated_surface-background: #{$background-high};
+			--surface-background: #{$background-lower-contrast};
+			--elevated_surface-background: #{$background-lower-contrast};
 			--panel-background: #{$background};
 			--panel-focused_border: null;
 			--background: #{$background};
@@ -94,25 +102,33 @@ themes {
 			--toolbar-background: #{$background};
 
 			/* Tabs */
-			--tab_bar-background: #{$background-high};
-			--tab-inactive_background: #{$background-high};
+			--tab_bar-background: #{$background-high-contrast};
+			--tab-inactive_background: #{$background-high-contrast};
 			--tab-active_background: #{$background};
 
 			/* Buttons */
-			--element-background: #{$background-lower};
-			--element-hover: #{$background-lowest};
-			--element-active: #{$background-lowest};
-			--element-selected: #{$background-lowest};
-			--element-disabled: #{$background-lowest};
+			--element-background: #{$background-lower-contrast};
+			--element-hover: #{$background-lowest-contrast};
+			--element-active: #{$background-lowest-contrast};
+			--element-selected: #{$background-lowest-contrast};
+			--element-disabled: #{$background-lowest-contrast};
 
 			--predictive: #{$predictive};
 			--modified: #{$modified};
 			--ignored: #{$ignored};
-			--hint: #{$hint};
-			--error: #{$error};
 			--deleted: #{$deleted};
 			--created: #{$created};
 			--warning: #{$warning};
+
+			--hint: #{$hint};
+			--hint-background: #{$hint-background};
+
+			--error: #{$error};
+			--error-background: #{$error-background};
+			--error-border: #{$error-border};
+
+			--info: #{$info};
+			// --info-background: #{$info-background};
 
 			/* Scrollbar */
 			--scrollbar-thumb-background: #{$foreground-transparent};
@@ -165,7 +181,7 @@ themes {
 				attribute { color: #{$syntax3}; }
 				boolean { color: #{$syntax3}; }
 				comment {
-					color: #{$foreground-low};
+					color: #{$foreground-low-contrast};
 					font-style: italic;
 				}
 				comment.doc { color: #{$syntax4}; }
@@ -211,7 +227,7 @@ themes {
 				tag { color: #{$syntax5}; }
 				text.literal { color: #{$syntax1}; }
 				title {
-					color: #{$syntax7};
+					color: #{$syntax2};
 					font-weight: 700;
 				}
 				type { color: #{$syntax7}; }
@@ -219,7 +235,58 @@ themes {
 				variable.special { color: #{$syntax7}; }
 				variant { color: #{$syntax6}; }
 
-			}
+			} 
+
+			// TODO
+			// --editor-subheader-background: null;
+			// --editor-highlighted_line-background: null;
+			// --editor-document_highlight-read_background: null;
+			// --editor-document_highlight-write_background: null;
+			// --scrollbar-thumb-hover_background: null;
+			// --scrollbar-track-border: null;
+			// --link_text-hover: null;
+			// --conflict: null;
+			// --conflict-background: null;
+			// --conflict-border: null;
+			// --created: null;
+			// --created-background: null;
+			// --created-border: null;
+			// --deleted: null;
+			// --deleted-background: null;
+			// --deleted-border: null;
+			// --error: null;
+			// --error-background: null;
+			// --error-border: null;
+			// --hidden: #f00;
+			// --hidden-background: #f00;
+			// --hidden-border: #f00;
+			// --hint: null;
+			// --hint-background: null;
+			// --hint-border: null;
+			// --ignored: null;
+			// --ignored-background: null;
+			// --ignored-border: null;
+			// --info: #f00;
+			// --info-background: #f00;
+			// --info-border: #f00;
+			// --modified: null;
+			// --modified-background: null;
+			// --modified-border: null;
+			// --predictive: null;
+			// --predictive-background: null;
+			// --predictive-border: null;
+			// --renamed: null;
+			// --renamed-background: null;
+			// --renamed-border: null;
+			// --success: null;
+			// --success-background: null;
+			// --success-border: null;
+			// --unreachable: #f00;
+			// --unreachable-background: #f00;
+			// --unreachable-border: #f00;
+			// --warning: null;
+			// --warning-background: null;
+			// --warning-border: null;
 
 		}
 
