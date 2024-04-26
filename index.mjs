@@ -6,7 +6,7 @@ import functions from './functions/index.mjs'
 
 // Get input file
 const inputDir = "./src"
-const inputFile = await functions.getScssFile(inputDir)
+const inputFile = functions.getScssFile(inputDir)
 
 // Define output files
 const fileName = path.basename(inputFile, '.scss')

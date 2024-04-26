@@ -6,7 +6,7 @@ import postcssJs from 'postcss-js'
 
 const functions = {
 
-	getScssFile: async inputDir => {
+	getScssFile: inputDir => {
 		// Get first SCSS file found in input directory
 		const files = fs.readdirSync(inputDir)
 		for (let file of files) {
