@@ -144,6 +144,29 @@ const functions = {
 		fs.writeFileSync(output, data)
 	},
 
+	processFile: async (inputFile, outputFiles) => {
+
+		// Convert SCSS to CSS
+		const css = await functions.compileSCSS(inputFile)
+	
+		// Convert CSS to JS Object
+		let js = await functions.cssToObject(css)
+	
+		// Transformations
+		js = functions.nest(js)
+		js = functions.replacements(js)
+		js = functions.structure(js)
+	
+		// Convert to JSON
+		let json = JSON.stringify(js, null, 2)
+	
+		// Save output
+		for (const outputFile of outputFiles) {
+			functions.save(json, outputFile)
+		}
+	
+	},
+
 }
 
 export default functions

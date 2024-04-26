@@ -15,37 +15,14 @@ const outputFiles = [
 	path.join(os.homedir(), '.config', 'zed', 'themes', `${fileName}.json`),
 ]
 
-const processFile = async () => {
-
-	// Convert SCSS to CSS
-	const css = await functions.compileSCSS(inputFile)
-
-	// Convert CSS to JS Object
-	let js = await functions.cssToObject(css)
-
-	// Transformations
-	js = functions.nest(js)
-	js = functions.replacements(js)
-	js = functions.structure(js)
-
-	// Convert to JSON
-	let json = JSON.stringify(js, null, 2)
-
-	// Save output
-	for (const outputFile of outputFiles) {
-		functions.save(json, outputFile)
-	}
-
-}
+functions.processFile(inputFile, outputFiles)
 
 if (process.env.MODE === "dev") {
 
 	// Watch source file for changes
-	fs.watch(inputDir, (_) => processFile())
+	fs.watch(inputDir, () => functions.processFile(inputFile, outputFiles))
 
 	console.log(`Watching '${inputDir}' for changes...`)
 	console.log(`Press ^c to stop`)
 
 }
-
-processFile()

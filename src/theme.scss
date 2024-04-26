@@ -10,6 +10,7 @@ themes {
 		--name: "Uno Flat Dark (Dev)";
 		--appearance: "dark";
 
+		// Foreground elements
 		$foreground-accent: #f3cf3f;
 		$foreground-higher-contrast: #efefef;
 		$foreground-high-contrast: #dfdfdf;
@@ -17,6 +18,7 @@ themes {
 		$foreground-low-contrast: #7a808b;
 		$foreground-lower-contrast: #495162;
 
+		// Background elements
 		$background-lowest-contrast: #495162;
 		$background-lower-contrast: #3a414e;
 		$background-low-contrast: #2c313c;
@@ -28,16 +30,12 @@ themes {
 		$predictive: #4D5970;
 		$modified: #e5c07b;
 		$ignored: #636b78;
-
 		$info: #4aa5f0;
-
 		$hint: #abb2bf;
 		$hint-background: mix($background-low-contrast, $info, 80%);
-
 		$error: #e06c75;
 		$error-background: mix($background-low-contrast, $error, 80%);
 		$error-border: $error;
-		
 		$deleted: #e06c75;
 		$created: #a5e075;
 		$warning: #d19a66;
@@ -56,11 +54,12 @@ themes {
 		$syntax1: #a9d48a;
 		$syntax2: #f6707b;
 		$syntax3: #df9d5e;
-		$syntax4: rgb(156, 177, 216);
+		$syntax4: #9cb1d8;
 		$syntax5: #cc7de7;
 		$syntax6: #79bcf3;
 		$syntax7: #e4c17b;
 		$syntax8: #40b8c8;
+		$syntax9: #bcc4d3;
 
 		style {
 
@@ -206,7 +205,7 @@ themes {
 				operator { color: #{$syntax8}; }
 				predictive { color: #{$syntax4}; }
 				preproc { color: #{$syntax1}; }
-				primary { color: #{$syntax5}; } // <--
+				primary { color: #{$syntax5}; }
 				property { color: #{$syntax2}; }
 				punctuation { color: #{$syntax7}; }
 				punctuation.bracket { color: #{$syntax3}; }
@@ -215,7 +214,7 @@ themes {
 					color: #{$syntax7};
 					font-weight: 700;
 				}
-				punctuation.special { color: #{$syntax5}; } // <--
+				punctuation.special { color: #{$syntax5}; }
 				string {
 					color: #{$syntax1};
 					&.escape { color: #{$syntax1}; }
@@ -230,13 +229,13 @@ themes {
 					font-weight: 700;
 				}
 				type { color: #{$syntax7}; }
-				variable { color: #{$syntax4}; }
+				variable { color: #{$syntax9}; }
 				variable.special { color: #{$syntax7}; }
 				variant { color: #{$syntax6}; }
 
-			} 
+			}
 
-			// TODO
+			// Other properties
 			// --editor-subheader-background: null;
 			// --editor-highlighted_line-background: null;
 			// --editor-document_highlight-read_background: null;

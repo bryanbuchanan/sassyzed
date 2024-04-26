@@ -1,6 +1,6 @@
 {
   "name": "sassyzed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Bryan Buchanan <bryan.b@hey.com>",
   "description": "Zed theme compiler that uses SCSS as input",
   "scripts": {
