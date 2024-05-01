@@ -93,7 +93,7 @@ const functions = {
 			} else {
 				if (typeof obj[key] === "string") {
 					// Remove double quotes from values
-					let value = obj[key].replace(/\"/g, '')
+					let value = obj[key].replace(/"/g, '')
 					// Handle null values
 					if (value === "null") value = null
 					newObj[newKey] = value
