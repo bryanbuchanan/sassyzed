@@ -11,18 +11,30 @@ themes {
 		--appearance: "dark";
 
 		// Foreground elements
-		$foreground-accent: #f3cf3f;
-		$foreground-high-contrast: #dfdfdf;
-		$foreground: #abb2bf;
-		$foreground-low-contrast: #7a808b;
+		$foreground-accent: 		#dfc184;
+		$foreground-high-contrast: 	#dfdfdf;
+		$foreground: 				#abb2bf;
+		$foreground-low-contrast: 	#7a808b;
 		$foreground-lower-contrast: #495162;
 
 		// Background elements
-		$background-lowest-contrast: #495162;
-		$background-lower-contrast: #3a414e;
-		$background-low-contrast: #2c313c;
-		$background: #282c33;
-		$background-high-contrast: #20242a;
+		$background-lowest-contrast: 	#495162;
+		$background-lower-contrast: 	#3a414e;
+		$background-low-contrast: 		#2c313c;
+		$background: 					#252834;
+		$background-high-contrast: 		#1f222d;
+
+		// Colors & Terminal
+		$green: 	#98c379;
+		$red: 		#e06c75;
+		$orange: 	#d19966;
+		$grey: 		#9cb1d8;
+		$magenta: 	#c678dd;
+		$blue: 		#61afee;
+		$yellow: 	#e5c07b;
+		$cyan: 		#56b6c2;
+		$white: 	#dedfd9;
+		$black: 	#3f4451;
 
 		// UI
 		$predictive: #4D5970;
@@ -38,27 +50,6 @@ themes {
 		$created: #a5e075;
 		$warning: #d19a66;
 
-		// Terminal
-		$black: #3f4451;
-		$red: #dc6d75;
-		$green: #98c379;
-		$yellow: #d9c770;
-		$blue: #4aa5f0;
-		$magenta: #c162de;
-		$cyan: #42b3c2;
-		$white: #efefef;
-
-		// Syntax highlighting
-		$syntax1: #a9d48a;
-		$syntax2: #f6707b;
-		$syntax3: #df9d5e;
-		$syntax4: #9cb1d8;
-		$syntax5: #cc7de7;
-		$syntax6: #79bcf3;
-		$syntax7: #e4c17b;
-		$syntax8: #40b8c8;
-		$syntax9: #bcc4d3;
-
 		style {
 
 			/* Editor */
@@ -67,7 +58,7 @@ themes {
 			--editor-gutter-background: #{$background};
 			--editor-active_line-background: #{$background-low-contrast};
 			--editor-line_number: #{$foreground-lower-contrast};
-			--editor-active_line_number: #{$foreground};
+			--editor-active_line_number: #{$foreground-accent};
 			--editor-invisible: #{$foreground-lower-contrast};
 			--editor-wrap_guide: #{$foreground-lower-contrast};
 			--editor-active_wrap_guide: #{$foreground-lower-contrast};
@@ -86,10 +77,13 @@ themes {
 			--text-placeholder: #{$foreground-lower-contrast};
 			--text-disabled: #{$foreground-lower-contrast};
 			--text-accent: #{$foreground-accent};
-
+			
+			/* Icons */
+			--icons-accent: #{$foreground-accent};
+						
 			/* Layout */
 			--surface-background: #{$background-lower-contrast};
-			--elevated_surface-background: #{$background-lower-contrast};
+			--elevated_surface-background: #{$background-low-contrast};
 			--panel-background: #{$background};
 			--panel-focused_border: null;
 			--background: #{$background};
@@ -108,7 +102,7 @@ themes {
 			--element-active: #{$background-lowest-contrast};
 			--element-selected: #{$background-lowest-contrast};
 			--element-disabled: #{$background-lowest-contrast};
-
+			
 			--predictive: #{$predictive};
 			--modified: #{$modified};
 			--ignored: #{$ignored};
@@ -174,62 +168,65 @@ themes {
 
 			/* Syntax highlighting */
 			syntax {
-				attribute { color: #{$syntax3}; }
-				boolean { color: #{$syntax3}; }
+				attribute { color: #{$orange}; }
+				boolean { color: #{$orange}; }
 				comment {
 					color: #{$foreground-low-contrast};
 					font-style: italic;
 				}
-				comment.doc { color: #{$syntax4}; }
-				constant { color: #{$syntax3}; }
-				constructor { color: #{$syntax2}; }
-				embedded { color: #{$syntax4}; }
+				comment.doc { color: #{$grey}; }
+				constant { color: #{$orange}; }
+				constructor { color: #{$red}; }
+				embedded { color: #{$grey}; }
 				emphasis {
-					color: #{$syntax5};
+					color: #{$magenta};
 					font-style: italic;
 					&.strong {
-						color: #{$syntax7};
+						color: #{$yellow};
 						font-weight: 700;
 					}
 				}
-				enum { color: #{$syntax8}; }
-				function { color: #{$syntax6}; }
-				hint { color: #{$syntax4}; }
-				keyword { color: #{$syntax5}; }
-				label { color: #{$syntax6}; }
-				link_text { color: #{$syntax6}; }
-				link_uri { color: #{$syntax5}; }
-				number { color: #{$syntax7}; }
-				operator { color: #{$syntax8}; }
-				predictive { color: #{$syntax4}; }
-				preproc { color: #{$syntax1}; }
-				primary { color: #{$syntax5}; }
-				property { color: #{$syntax2}; }
-				punctuation { color: #{$syntax7}; }
-				punctuation.bracket { color: #{$syntax3}; }
-				punctuation.delimiter { color: #{$syntax7}; }
+				enum { color: #{$cyan}; }
+				function {
+					color: #{$blue};
+					font-weight: 700;
+				}
+				hint { color: #{$grey}; }
+				keyword { color: #{$magenta}; }
+				label { color: #{$blue}; }
+				link_text { color: #{$blue}; }
+				link_uri { color: #{$magenta}; }
+				number { color: #{$yellow}; }
+				operator { color: #{$cyan}; }
+				predictive { color: #{$grey}; }
+				preproc { color: #{$green}; }
+				primary { color: #{$magenta}; }
+				property { color: #{$red}; }
+				punctuation { color: #{$yellow}; }
+				punctuation.bracket { color: #{$orange}; }
+				punctuation.delimiter { color: #{$yellow}; }
 				punctuation.list_marker {
-					color: #{$syntax7};
+					color: #{$yellow};
 					font-weight: 700;
 				}
-				punctuation.special { color: #{$syntax5}; }
+				punctuation.special { color: #{$magenta}; }
 				string {
-					color: #{$syntax1};
-					&.escape { color: #{$syntax1}; }
-					&.regex { color: #{$syntax1}; }
-					&.special { color: #{$syntax8}; }
-					&.special.symbol { color: #{$syntax8}; }
+					color: #{$green};
+					&.escape { color: #{$green}; }
+					&.regex { color: #{$green}; }
+					&.special { color: #{$cyan}; }
+					&.special.symbol { color: #{$cyan}; }
 				}
-				tag { color: #{$syntax5}; }
-				text.literal { color: #{$syntax1}; }
+				tag { color: #{$magenta}; }
+				text.literal { color: #{$green}; }
 				title {
-					color: #{$syntax2};
+					color: #{$red};
 					font-weight: 700;
 				}
-				type { color: #{$syntax7}; }
-				variable { color: #{$syntax9}; }
-				variable.special { color: #{$syntax7}; }
-				variant { color: #{$syntax6}; }
+				type { color: #{$yellow}; }
+				variable { color: #{$white}; }
+				variable.special { color: #{$yellow}; }
+				variant { color: #{$blue}; }
 
 			}
 
