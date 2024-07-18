@@ -68,25 +68,25 @@ const functions = {
 	replacements: obj => {
 		const newObj = {};
 		Object.keys(obj).forEach(key => {
-
+			
 			// Remove CSS var prefix
 			let newKey = key.startsWith('--') ? key.slice(2) : key
-
+			
 			// Schema
 			newKey = newKey.replace('schema', '$schema')
-
+			
 			// Replace '--' with '_'
 			newKey = newKey.replace(/--/g, '_')
-
+			
 			// Replace '-' with '.'
 			newKey = newKey.replace(/-/g, '.')
-
+			
 			// Replace 'fontWeight' with 'font_weight'
 			newKey = newKey.replace('fontWeight', 'font_weight')
-
+			
 			// Replace 'fontStyle' with 'font_style'
 			newKey = newKey.replace('fontStyle', 'font_style')
-
+			
 			// Recursive call if the value is an object (and not an array)
 			if (obj[key] instanceof Object && !Array.isArray(obj[key])) {
 				newObj[newKey] = functions.replacements(obj[key])
@@ -106,14 +106,14 @@ const functions = {
 	},
 
 	structure: obj => {
-
+		
 		// Turn themes into an array
 		let themes = obj.themes
 		obj.themes = []
 		for (const theme in themes) {
 			obj.themes.push({...themes[theme]})
 		}
-
+		
 		// Turn players into an array
 		for (const theme of obj.themes) {
 			let players = theme.style.players
@@ -122,18 +122,18 @@ const functions = {
 				theme.style.players.push({...players[player]})
 			}
 		}
-
+		
 		// Unwrap :root object
 		for (const [key, value] of Object.entries(obj[':root'])) {
 			obj[key] = value
 		}
 		delete obj[':root']
-
+		
 		// Sort root level properties
 		themes = obj.themes
 		delete obj.themes
 		obj.themes = themes
-
+		
 		return obj
 	},
 
@@ -145,26 +145,26 @@ const functions = {
 	},
 
 	processFile: async (inputFile, outputFiles) => {
-
+		
 		// Convert SCSS to CSS
 		const css = await functions.compileSCSS(inputFile)
-	
+		
 		// Convert CSS to JS Object
 		let js = await functions.cssToObject(css)
-	
+		
 		// Transformations
 		js = functions.nest(js)
 		js = functions.replacements(js)
 		js = functions.structure(js)
-	
+		
 		// Convert to JSON
 		let json = JSON.stringify(js, null, 2)
-	
+		
 		// Save output
 		for (const outputFile of outputFiles) {
 			functions.save(json, outputFile)
 		}
-	
+		
 	},
 
 }
