@@ -5,25 +5,25 @@
 }
 
 themes {
-
+	
 	dark {
 		--name: "Uno Flat Dark (Dev)";
 		--appearance: "dark";
-
+		
 		// Foreground elements
 		$foreground-accent: 		#dfc184;
 		$foreground-high-contrast: 	#dfdfdf;
 		$foreground: 				#abb2bf;
 		$foreground-low-contrast: 	#7a808b;
 		$foreground-lower-contrast: #495162;
-
+		
 		// Background elements
 		$background-lowest-contrast: 	#495162;
 		$background-lower-contrast: 	#3a414e;
 		$background-low-contrast: 		#2c313c;
 		$background: 					#282c33;
 		$background-high-contrast: 		#202428;
-
+		
 		// Colors & Terminal
 		$green: 	#99c27c;
 		$red: 		#e06c75;
@@ -34,296 +34,8 @@ themes {
 		$yellow: 	#e5c07b;
 		$cyan: 		#56b6c2;
 		$white: 	#d9dcdf;
-		$black: 	#3f4451;
-
-		// UI
-		$predictive: #4D5970;
-		$modified: #e5c07b;
-		$ignored: #636b78;
-		$info: #4aa5f0;
-		$hint: #abb2bf;
-		$hint-background: mix($background-low-contrast, $info, 80%);
-		$error: #e06c75;
-		$error-background: mix($background-low-contrast, $error, 80%);
-		$error-border: $error;
-		$deleted: #e06c75;
-		$created: #a5e075;
-		$warning: #d19a66;
-
-		style {
-
-			/* Editor */
-			--editor-foreground: #{$foreground};
-			--editor-background: #{$background};
-			--editor-gutter-background: #{$background};
-			--editor-active_line-background: #{$background-low-contrast};
-			--editor-line_number: #{$foreground-lower-contrast};
-			--editor-active_line_number: #{$foreground-accent};
-			--editor-invisible: #{$foreground-lower-contrast};
-			--editor-wrap_guide: #{$foreground-lower-contrast};
-			--editor-active_wrap_guide: #{$foreground-lower-contrast};
-
-			/* Borders */
-			--border: #{$background-high-contrast};
-			--border-variant: #{$background-high-contrast};
-			--border-focused: #{$background-high-contrast};
-			--border-selected: #{$background-high-contrast};
-			--border-transparent: #{$background-high-contrast};
-			--border-disabled: #{$background-high-contrast};
-
-			/* Text */
-			--text: #{$foreground-high-contrast};
-			--text-muted: #{$foreground};
-			--text-placeholder: #{$foreground-lower-contrast};
-			--text-disabled: #{$foreground-lower-contrast};
-			--text-accent: #{$foreground-accent};
-			
-			/* Icons */
-			--icons-accent: #{$foreground-accent};
-						
-			/* Layout */
-			--surface-background: #{$background-lower-contrast};
-			--elevated_surface-background: #{$background-low-contrast};
-			--panel-background: #{$background};
-			--panel-focused_border: null;
-			--background: #{$background};
-			--status_bar-background: #{$background};
-			--title_bar-background: #{$background};
-			--toolbar-background: #{$background};
-
-			/* Tabs */
-			--tab_bar-background: #{$background-high-contrast};
-			--tab-inactive_background: #{$background-high-contrast};
-			--tab-active_background: #{$background};
-
-			/* Buttons */
-			--element-background: #{$background-lower-contrast};
-			--element-hover: #{$background-lowest-contrast};
-			--element-active: #{$background-lowest-contrast};
-			--element-selected: #{$background-lowest-contrast};
-			--element-disabled: #{$background-lowest-contrast};
-			
-			--predictive: #{$predictive};
-			--modified: #{$modified};
-			--ignored: #{$ignored};
-			--deleted: #{$deleted};
-			--created: #{$created};
-			--warning: #{$warning};
-
-			--hint: #{$hint};
-			--hint-background: #{$hint-background};
-
-			--error: #{$error};
-			--error-background: #{$error-background};
-			--error-border: #{$error-border};
-
-			--info: #{$info};
-			// --info-background: #{$info-background};
-
-			/* Scrollbar */
-			--scrollbar-thumb-background: #{$foreground}44;
-			// --scrollbar-thumb-hover--background: #abb2bf;
-			--scrollbar-thumb-border: transparent;
-			--scrollbar-track-background: transparent;
-
-			/* Terminal */
-			--terminal-background: #{$background};
-			--terminal-ansi-black: #{$black};
-			--terminal-ansi-red: #{$red};
-			--terminal-ansi-green: #{$green};
-			--terminal-ansi-yellow: #{$yellow};
-			--terminal-ansi-blue: #{$blue};
-			--terminal-ansi-magenta: #{$magenta};
-			--terminal-ansi-cyan: #{$cyan};
-			--terminal-ansi-white: #{$white};
-
-			/* Players */
-			players {
-				p1 {
-					--cursor: #{$white};
-					--background: #{$white};
-					--selection: #{$white}22;
-				}
-				p2 {
-					--cursor: #{$blue};
-					--background: #{$blue};
-					--selection: #{$blue}44;
-				}
-				p3 {
-					--cursor: #{$magenta};
-					--background: #{$magenta};
-					--selection: #{$magenta}44;
-				}
-				p4 {
-					--cursor: #{$green};
-					--background: #{$green};
-					--selection: #{$green}44;
-				}
-				p5 {
-					--cursor: #{$red};
-					--background: #{$red};
-					--selection: #{$red}44;
-				}
-			}
-
-			/* Syntax highlighting */
-			syntax {
-				attribute { color: #{$orange}; }
-				boolean { color: #{$orange}; }
-				comment {
-					color: #{$foreground-low-contrast};
-					font-style: italic;
-				}
-				comment.doc { color: #{$grey}; }
-				constant { color: #{$orange}; }
-				constructor { color: #{$red}; }
-				embedded { color: #{$grey}; }
-				emphasis {
-					color: #{$magenta};
-					font-style: italic;
-					&.strong {
-						color: #{$yellow};
-						font-weight: 700;
-					}
-				}
-				enum { color: #{$cyan}; }
-				function {
-					color: #{$blue};
-					font-weight: 700;
-				}
-				hint { color: #{$grey}; }
-				keyword { color: #{$magenta}; }
-				label { color: #{$blue}; }
-				link_text { color: #{$blue}; }
-				link_uri { color: #{$magenta}; }
-				number { color: #{$yellow}; }
-				operator { color: #{$cyan}; }
-				predictive { color: #{$grey}; }
-				preproc { color: #{$green}; }
-				primary { color: #{$magenta}; }
-				property { color: #{$red}; }
-				punctuation { color: #{$yellow}; }
-				punctuation.bracket { color: #{$orange}; }
-				punctuation.delimiter { color: #{$yellow}; }
-				punctuation.list_marker {
-					color: #{$yellow};
-					font-weight: 700;
-				}
-				punctuation.special { color: #{$magenta}; }
-				string {
-					color: #{$green};
-					&.escape { color: #{$green}; }
-					&.regex { color: #{$green}; }
-					&.special { color: #{$cyan}; }
-					&.special.symbol { color: #{$cyan}; }
-				}
-				tag { color: #{$magenta}; }
-				text.literal { color: #{$green}; }
-				title {
-					color: #{$red};
-					font-weight: 700;
-				}
-				type { color: #{$yellow}; }
-				variable { color: #{$white}; }
-				variable.special { color: #{$yellow}; }
-				variant { color: #{$blue}; }
-
-			}
-
-			// Other properties
-			// --editor-subheader-background: null;
-			// --editor-highlighted_line-background: null;
-			// --editor-document_highlight-read_background: null;
-			// --editor-document_highlight-write_background: null;
-			// --scrollbar-thumb-hover_background: null;
-			// --scrollbar-track-border: null;
-			// --link_text-hover: null;
-			// --conflict: null;
-			// --conflict-background: null;
-			// --conflict-border: null;
-			// --created: null;
-			// --created-background: null;
-			// --created-border: null;
-			// --deleted: null;
-			// --deleted-background: null;
-			// --deleted-border: null;
-			// --error: null;
-			// --error-background: null;
-			// --error-border: null;
-			// --hidden: #f00;
-			// --hidden-background: #f00;
-			// --hidden-border: #f00;
-			// --hint: null;
-			// --hint-background: null;
-			// --hint-border: null;
-			// --ignored: null;
-			// --ignored-background: null;
-			// --ignored-border: null;
-			// --info: #f00;
-			// --info-background: #f00;
-			// --info-border: #f00;
-			// --modified: null;
-			// --modified-background: null;
-			// --modified-border: null;
-			// --predictive: null;
-			// --predictive-background: null;
-			// --predictive-border: null;
-			// --renamed: null;
-			// --renamed-background: null;
-			// --renamed-border: null;
-			// --success: null;
-			// --success-background: null;
-			// --success-border: null;
-			// --unreachable: #f00;
-			// --unreachable-background: #f00;
-			// --unreachable-border: #f00;
-			// --warning: null;
-			// --warning-background: null;
-			// --warning-border: null;
-
-		}
-
-	}
-	
-	light {
-		--name: "Uno Flat Light (Dev)";
-		--appearance: "light";
-	
-		// Foreground elements
-		$foreground-accent: 		#dfc184;
-		$foreground-high-contrast: 	#dfdfdf;
-		$foreground: 				#191919;
-		$foreground-low-contrast: 	#959595;
-		$foreground-lower-contrast: #c5c5c5;
-	
-		// Background elements
-		$background-lowest-contrast: 	#aaa;
-		$background-lower-contrast: 	#aaa;
-		$background-low-contrast: 		#eee;
-		$background: 					#f7f7f7;
-		$background-high-contrast: 		#f7f7f7;
-	
-		// Colors & Terminal
-		$green: 	#99c27c;
-		$red: 		#e06c75;
-		$orange: 	#cc711d;
-		$grey: 		#9cb1d8;
-		$magenta: 	#9a39b7;
-		$blue: 		#61afee;
-		$yellow: 	#c49640;
-		$cyan: 		#56b6c2;
-		$white: 	#191919;
-		$black: 	#3f4451;
+		$black: 	#777e90;
 		
-		// $magenta: #a726a4;
-		$red: #e45648;
-		// $dark-red: #ca1243;
-		$green: #50a14f;
-		$blue: #0084bc;
-		// $violet: #556de8;
-		// $brown: #b86b01;
-		// $white: #fff;
-	
 		// UI
 		$predictive: #4D5970;
 		$modified: #e5c07b;
@@ -337,9 +49,9 @@ themes {
 		$deleted: #e06c75;
 		$created: #a5e075;
 		$warning: #d19a66;
-	
+		
 		style {
-	
+			
 			/* Editor */
 			--editor-foreground: #{$foreground};
 			--editor-background: #{$background};
@@ -350,7 +62,7 @@ themes {
 			--editor-invisible: #{$foreground-lower-contrast};
 			--editor-wrap_guide: #{$foreground-lower-contrast};
 			--editor-active_wrap_guide: #{$foreground-lower-contrast};
-	
+
 			/* Borders */
 			--border: #{$background-high-contrast};
 			--border-variant: #{$background-high-contrast};
@@ -358,7 +70,7 @@ themes {
 			--border-selected: #{$background-high-contrast};
 			--border-transparent: #{$background-high-contrast};
 			--border-disabled: #{$background-high-contrast};
-	
+
 			/* Text */
 			--text: #{$foreground-high-contrast};
 			--text-muted: #{$foreground};
@@ -368,9 +80,9 @@ themes {
 			
 			/* Icons */
 			--icons-accent: #{$foreground-accent};
-						
+			
 			/* Layout */
-			--surface-background: #{$background-lower-contrast};
+			--surface-background: #{$background};
 			--elevated_surface-background: #{$background-low-contrast};
 			--panel-background: #{$background};
 			--panel-focused_border: null;
@@ -378,12 +90,12 @@ themes {
 			--status_bar-background: #{$background};
 			--title_bar-background: #{$background};
 			--toolbar-background: #{$background};
-	
+
 			/* Tabs */
 			--tab_bar-background: #{$background-high-contrast};
 			--tab-inactive_background: #{$background-high-contrast};
 			--tab-active_background: #{$background};
-	
+
 			/* Buttons */
 			--element-background: #{$background-lower-contrast};
 			--element-hover: #{$background-lowest-contrast};
@@ -397,23 +109,23 @@ themes {
 			--deleted: #{$deleted};
 			--created: #{$created};
 			--warning: #{$warning};
-	
+
 			--hint: #{$hint};
 			--hint-background: #{$hint-background};
-	
+
 			--error: #{$error};
 			--error-background: #{$error-background};
 			--error-border: #{$error-border};
-	
+
 			--info: #{$info};
 			// --info-background: #{$info-background};
-	
+
 			/* Scrollbar */
 			--scrollbar-thumb-background: #{$foreground}44;
 			// --scrollbar-thumb-hover--background: #abb2bf;
 			--scrollbar-thumb-border: transparent;
 			--scrollbar-track-background: transparent;
-	
+
 			/* Terminal */
 			--terminal-background: #{$background};
 			--terminal-ansi-black: #{$black};
@@ -424,7 +136,7 @@ themes {
 			--terminal-ansi-magenta: #{$magenta};
 			--terminal-ansi-cyan: #{$cyan};
 			--terminal-ansi-white: #{$white};
-	
+
 			/* Players */
 			players {
 				p1 {
@@ -453,7 +165,7 @@ themes {
 					--selection: #{$red}44;
 				}
 			}
-	
+
 			/* Syntax highlighting */
 			syntax {
 				attribute { color: #{$orange}; }
@@ -515,13 +227,13 @@ themes {
 				variable { color: #{$white}; }
 				variable.special { color: #{$yellow}; }
 				variant { color: #{$blue}; }
-	
+				
 			}
-	
+
 			// Other properties
 			// --editor-subheader-background: null;
 			// --editor-highlighted_line-background: null;
-			// --editor-document_highlight-read_background: null;
+			--editor-document_highlight-read_background: #{$background-lowest-contrast};
 			// --editor-document_highlight-write_background: null;
 			// --scrollbar-thumb-hover_background: null;
 			// --scrollbar-track-border: null;
@@ -568,9 +280,9 @@ themes {
 			// --warning: null;
 			// --warning-background: null;
 			// --warning-border: null;
-	
+
 		}
-	
+
 	}
 
 }
