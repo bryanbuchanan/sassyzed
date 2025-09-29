@@ -12,6 +12,7 @@ themes {
 		
 		// Foreground elements
 		$foreground-accent: 		#dfc184;
+		$foreground-accent: 		#efbf5e;
 		$foreground-high-contrast: 	#dfdfdf;
 		$foreground: 				#abb2bf;
 		$foreground-low-contrast: 	#7a808b;
@@ -42,9 +43,9 @@ themes {
 		$ignored: #636b78;
 		$info: #4aa5f0;
 		$hint: #abb2bf;
-		$hint-background: mix($background-low-contrast, $info, 80%);
+		$hint-background: #405261;
 		$error: #e06c75;
-		$error-background: mix($background-low-contrast, $error, 80%);
+		$error-background: color-mix($background-low-contrast, $error, 80%);
 		$error-border: $error;
 		$deleted: #e06c75;
 		$created: #a5e075;
@@ -98,9 +99,9 @@ themes {
 
 			/* Buttons */
 			--element-background: #{$background-lower-contrast};
-			--element-hover: #{$background-lowest-contrast};
-			--element-active: #{$background-lowest-contrast};
-			--element-selected: #{$background-lowest-contrast};
+			--element-hover: #{$background-low-contrast};
+			--element-active: #{$background-lower-contrast};
+			--element-selected: #{$background-lower-contrast};
 			--element-disabled: #{$background-lowest-contrast};
 			
 			--predictive: #{$predictive};
@@ -111,14 +112,15 @@ themes {
 			--warning: #{$warning};
 
 			--hint: #{$hint};
-			--hint-background: #{$hint-background};
+			/* --hint-background: #f0f; */
 
 			--error: #{$error};
 			--error-background: #{$error-background};
 			--error-border: #{$error-border};
-
-			--info: #{$info};
-			// --info-background: #{$info-background};
+			
+			--info: #{$info}; // Underline
+			--info-background: #{$hint-background};
+			--info-border: #{$info};
 
 			/* Scrollbar */
 			--scrollbar-thumb-background: #{$foreground}44;
@@ -233,7 +235,7 @@ themes {
 			// Other properties
 			// --editor-subheader-background: null;
 			// --editor-highlighted_line-background: null;
-			--editor-document_highlight-read_background: #{$background-lowest-contrast};
+			--editor-document_highlight-read_background: #{$background-lower-contrast};
 			// --editor-document_highlight-write_background: null;
 			// --scrollbar-thumb-hover_background: null;
 			// --scrollbar-track-border: null;
